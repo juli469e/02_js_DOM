@@ -10,6 +10,10 @@
         margin: 50px;
       }
 
+      article img {
+        width: 100%;
+      }
+
       section {
         display: flex;
         flex-direction: row;
@@ -61,5 +65,31 @@
     <footer>
       <p>This is the footer</p>
     </footer>
+    <script>
+      const header = document.querySelector("header");
+      console.log(header);
+
+      const main = document.querySelector("main");
+      console.log(main);
+
+      const section = document.querySelector("section");
+      console.log(section);
+
+      const artikel1 = document.querySelector("#artikel1");
+      console.log(artikel1);
+
+      const artikel2 = document.querySelector("#artikel2");
+      console.log(artikel2);
+
+      const h1 = document.querySelector("h1");
+      h1.innerHTML =
+        "<h1>Min overskrift til info</h1><img src='http://mabe-kea.dk/E19/pics/pig.png'>";
+
+      const h2 = document.querySelector("h2");
+      h2.innerHTML = "<h2>H2 lavet om</h2>";
+
+      artikel1.innerHTML = "<h3>TESTER</h3>";
+      artikel2.textContent = "qæwmdwkmd";
+    </script>
   </body>
 </html>

@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>03</title>
     <style>
       body {
         margin: 50px;
+      }
+
+      article img {
+        width: 100%;
       }
 
       section {
@@ -19,6 +23,7 @@
       header {
         display: flex;
         justify-content: center;
+        border: 1px black;
       }
 
       footer {
@@ -61,5 +66,12 @@
     <footer>
       <p>This is the footer</p>
     </footer>
+    <script>
+      const article1 = document.querySelector("article:first-child");
+      article1.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/pig.png'>";
+
+      const article2 = document.querySelector("article:nth-child(2)");
+      article2.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/pig.png'>";
+    </script>
   </body>
 </html>
