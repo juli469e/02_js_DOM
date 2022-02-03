@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06</title>
 </head>
 <body>
     <style>
@@ -35,7 +35,7 @@
         <h2>Undertitel</h2>
         <section>
             <article>
-                <img src="https://placeimg.com/400/300/any" alt="Article 2 img">
+                <img src="https://placeimg.com/400/300/any" alt="Article 1 img">
                 <h3>Article 1</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius esse quam quasi, beatae soluta tenetur consequatur atque, labore quos saepe rerum veritatis aliquid cum alias necessitatibus vel ducimus quidem accusantium!</p>
             </article>
@@ -50,8 +50,6 @@
         <p>This is the footer</p>
     </footer>
     <script>
-        
-
         const header = document.querySelector("header");
         const main = document.querySelector("main");
         const section = document.querySelector("section");
@@ -80,10 +78,22 @@
         article3.appendChild(article3Title);
         article3.appendChild(article3Text);
         
-    
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            console.log("start");
+         }
+
+        let myRand;
+        myRand = Math.floor(Math.random() * 5) + 1;
+
+        article1Img.addEventListener("click", skiftBillede);
+        function skiftBillede() {
+        article1Img.src = "https://placeimg.com/400/300/any"+2;
+        console.log(skiftBillede)
+        }
 
 
-        
+
     </script>
 </body>
 </html>
