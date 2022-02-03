@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07</title>
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+        header, footer {
+            border: 1px black solid;
+            text-align: center;
+        }
+        main{
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+            gap: 1em;
+        }
+        img {
+            width: 100%;
+        }
+
+        .shadow {
+            box-shadow: -1px 20px 102px 12px rgba(170, 157, 254, 0.93);
+
+        }
+        
+    </style>
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="https://placeimg.com/400/300/any" alt="Article 1 img">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius esse quam quasi, beatae soluta tenetur consequatur atque, labore quos saepe rerum veritatis aliquid cum alias necessitatibus vel ducimus quidem accusantium!</p>
+            </article>
+            <article>
+                <img src="https://placeimg.com/640/480/any?t=1643706192539" alt="Article 2 img">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius esse quam quasi, beatae soluta tenetur consequatur atque, labore quos saepe rerum veritatis aliquid cum alias necessitatibus vel ducimus quidem accusantium!</p>
+            </artsicle>
+        </section>  
+    </main>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+    <script>
+        const header = document.querySelector("header");
+        const main = document.querySelector("main");
+        const section = document.querySelector("section");
+        const article1 = document.querySelector("article:first-child");
+        const article1Title = document.querySelector("article:first-child h3");
+        const article1Text = document.querySelector("article:first-child p");
+        const article1Img = document.querySelector("article:first-child img");
+        const article2 = document.querySelector("article:nth-child(2)");
+        const article2Title = document.querySelector("article:nth-child(2) h3");
+        const article2Text = document.querySelector("article:nth-child(2) p");
+        const article2Img = document.querySelector("article:nth-child(2) img");
+        const footer = document.querySelector("footer")
+
+        console.log(header, main, section, article1, article2, footer);
+
+        let article3 = document.createElement("article");
+        let article3Img = document.createElement("img");
+        let article3Title = document.createElement("h3");
+        let article3Text = document.createElement("p");
+
+        article3Img.src = "https://placeimg.com/640/480/any?t=1643706192542"
+        article3Title.textContent = "Article 3"
+        article3Text.textContent = "This article has been created with javascript";
+        section.appendChild(article3);
+        article3.appendChild(article3Img);
+        article3.appendChild(article3Title);
+        article3.appendChild(article3Text);
+        
+        //loader i consolelog
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            console.log("start");
+         }
+
+        //skifter billede 1 ud ved klik
+        let myRand;
+        myRand = Math.floor(Math.random() * 5) + 1;
+
+        article1Img.addEventListener("click", skiftBillede);
+        function skiftBillede() {
+        article1Img.src = "https://placeimg.com/400/300/any"+2;
+        console.log(skiftBillede)
+        }
+        
+         //tilføj shadow 
+
+         let htmlElement = document.querySelector("article");
+         document.querySelector("article").addEventListener("mouseover", shadowOn);
+         document.querySelector("article").removeEventListener("mouseout", shadowOff);
+         
+         function shadowOn() {
+             htmlElement.classList.toggle("shadow");
+             console.log(shadowOn);
+         }
+         function shadowOff() {
+             htmlElement.classList.toggle("shadow");
+             console.log(shadowOff);
+         }
+
+        // article1.addEventListener("mouseover", noShadow);
+        // article1.addEventListener("mouseout", shadow);
+
+        // function shadow() {
+        //     article1.classList.toggle("box-shadow")
+        //     console.log(shadow)
+        // }
+
+        // function noShadow() {
+        //     article1.classList.remove("box-shadow")
+        //     console.log(noShadow)
+
+        // function noShadow() {
+        // console.log(shadow);
+        // article1.classList.toggle("shadow");
+        // article1.style.boxShadow = "";  
+        //  }
+        
+        // // article1.addEventListener("mouseover", fjernShadow);
+        // //  function fjernShadow(){
+        // //   article1.classList.remove("shadow");   
+        // //  }
+        
+        
+        // article2.classList.toggle("shadow");
+        // article3.classList.toggle("shadow");
+
+       
+
+
+    </script>
+</body>
+</html>
